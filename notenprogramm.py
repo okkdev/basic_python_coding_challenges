@@ -7,7 +7,7 @@ while 1:
         print("Durchschnitt: " + str(sum(grades) / len(grades)))
         break
     elif grade > 6 or grade < 1:
-        print(str(grade) + " ist keine valide Note!")
+        print(str(grade) + " ist keine gültige Note!")
     else:
         grades.append(grade)
         print("Zur Berechnung des Durchschnitts geben Sie 0 ein!")
