@@ -12,7 +12,7 @@ print("*********")
 print("P O K E R")
 print("*********")
 print("EINGABE IHRER KARTEN")
-print("Geben Sie die höchste Karte ein: ")
+print("Geben Sie Ihre Karten ein: ")
 print()
 for i in range(1, 6):
     karte = {}
