@@ -34,9 +34,13 @@ for karte in hand_dict:
 # Check functions
 
 
+def create_list(hand, value):
+    # extract all values from hand to list
+    return [hand[k][value] for k in hand]
+
+
 def check_flush(hand):
-    # extract all colors from hand to list
-    farben = [hand[h]["farbe"] for h in hand]
+    farben = create_list(hand, "farbe")
     if len(set(farben)) == 1:
         return True
     else:
@@ -44,8 +48,7 @@ def check_flush(hand):
 
 
 def check_straight(hand):
-    # extract all werte from hand to list
-    werte = [hand[h]["wert"] for h in hand]
+    werte = create_list(hand, "wert")
     if sorted(werte) == list(range(min(werte), max(werte) + 1)):
         return True
     else:
@@ -60,8 +63,7 @@ def check_straight_flush(hand):
 
 
 def check_royal_flush(hand):
-    # extract all werte from hand to list
-    werte = [hand[h]["wert"] for h in hand]
+    werte = create_list(hand, "wert")
     if check_flush(hand) and check_straight(hand) and max(werte) == 14:
         return True
     else:
@@ -69,8 +71,7 @@ def check_royal_flush(hand):
 
 
 def get_pairs(hand):
-    # extract all werte from hand to list
-    werte = [hand[h]["wert"] for h in hand]
+    werte = create_list(hand, "wert")
     # create dictionary
     pairs = {"two": 0, "three": 0, "four": 0}
     # loop through all available werte and count how many times they appear
@@ -140,3 +141,5 @@ elif check_two_pair(hand_dict):
     print("TWO PAIRS")
 elif check_pair(hand_dict):
     print("ONE PAIR")
+else:
+    print("Sie haben nichts.")
