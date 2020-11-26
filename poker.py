@@ -34,8 +34,8 @@ for karte in hand_dict:
 # Check functions
 
 
+# extract all values from hand to list
 def create_list(hand, value):
-    # extract all values from hand to list
     return [hand[k][value] for k in hand]
 
 
