@@ -41,33 +41,21 @@ def create_list(hand, value):
 
 def check_flush(hand):
     farben = create_list(hand, "farbe")
-    if len(set(farben)) == 1:
-        return True
-    else:
-        return False
+    return len(set(farben)) == 1
 
 
 def check_straight(hand):
     werte = create_list(hand, "wert")
-    if sorted(werte) == list(range(min(werte), max(werte) + 1)):
-        return True
-    else:
-        return False
+    return sorted(werte) == list(range(min(werte), max(werte) + 1))
 
 
 def check_straight_flush(hand):
-    if check_flush(hand) and check_straight(hand):
-        return True
-    else:
-        return False
+    return check_flush(hand) and check_straight(hand)
 
 
 def check_royal_flush(hand):
     werte = create_list(hand, "wert")
-    if check_flush(hand) and check_straight(hand) and max(werte) == 14:
-        return True
-    else:
-        return False
+    return check_flush(hand) and check_straight(hand) and max(werte) == 14
 
 
 def get_pairs(hand):
@@ -87,38 +75,23 @@ def get_pairs(hand):
 
 
 def check_pair(hand):
-    if get_pairs(hand)["two"] == 1:
-        return True
-    else:
-        return False
+    return get_pairs(hand)["two"] == 1
 
 
 def check_two_pair(hand):
-    if get_pairs(hand)["two"] == 2:
-        return True
-    else:
-        return False
+    return get_pairs(hand)["two"] == 2
 
 
 def check_three_kind(hand):
-    if get_pairs(hand)["three"] == 1:
-        return True
-    else:
-        return False
+    return get_pairs(hand)["three"] == 1
 
 
 def check_four_kind(hand):
-    if get_pairs(hand)["four"] == 1:
-        return True
-    else:
-        return False
+    return get_pairs(hand)["four"] == 1
 
 
 def check_full_house(hand):
-    if get_pairs(hand)["three"] == 1 and get_pairs(hand)["two"] == 1:
-        return True
-    else:
-        return False
+    return get_pairs(hand)["three"] == 1 and get_pairs(hand)["two"] == 1
 
 
 # Checks
