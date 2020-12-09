@@ -297,7 +297,7 @@ def bubble_sort(list):
     return list
 
 
-# # Ausgabe sortierte Liste
+# Ausgabe sortierte Liste
 print(bubble_sort(pollen))
 
 pollen_mit_datum = [(pollen[i], messzeitpunkte[i]) for i in range(0, len(pollen))]
