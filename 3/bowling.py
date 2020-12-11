@@ -3,14 +3,14 @@ runden = int(input("Anzahl Runden: "))
 
 resultate = []
 
-for i in range(1, spieler+1):
+for i in range(1, spieler + 1):
     print("Spieler " + str(i))
-    scores = []
-    for i in range(1, runden+1):
+    score = 0
+    for i in range(1, runden + 1):
         print("Runde " + str(i))
-        scores.append(int(input("Wert: ")))
-    resultate.append(scores)
+        score += int(input("Wert: "))
+    resultate.append(score)
 
 print("--------RESULTATE--------")
 for i, resultat in enumerate(resultate, start=1):
-    print("Spieler " + str(i) + " Punkte: " + str(sum(resultat)))
+    print("Spieler ", i, " Punkte: ", resultat)
