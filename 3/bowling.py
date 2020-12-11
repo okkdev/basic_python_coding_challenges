@@ -12,5 +12,5 @@ for i in range(1, spieler + 1):
     resultate.append(scores)
 
 print("--------RESULTATE--------")
-for i, resultat in enumerate(resultate, start=1):
-    print("Spieler ", i, " Punkte: ", sum(resultat))
+for i, scores in enumerate(resultate, start=1):
+    print("Spieler ", i, " Punkte: ", sum(scores))
